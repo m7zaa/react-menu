@@ -74,8 +74,8 @@ class App extends Component {
               ? 1
               : -1
             : a.price < b.price
-            ? 1
-            : -1
+              ? 1
+              : -1
         );
       } else {
         state.products.sort((a, b) => (a.id > b.id ? 1 : -1));
@@ -102,7 +102,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1>E-commerce Shopping Cart Application</h1>
+        <h1>Fluctus Flames</h1>
         <hr />
         <div className="row">
           <div className="col-md-9">
@@ -122,7 +122,7 @@ class App extends Component {
               cartItems={this.state.cartItems}
               handleRemoveFromCart={this.handleRemoveFromCart}
             />
-            <Copyright />
+            {/* <Copyright /> */}
           </div>
         </div>
       </div>
