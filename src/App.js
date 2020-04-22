@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import Products from "./components/Products";
 import Filter from "./components/Filter";
 import Basket from "./components/Basket";
-
+import data from "./assets/data/data.json";
+// import products from "../public/products";
 import "./App.css";
-import Copyright from "./components/Copyright";
+// import Copyright from "./components/Copyright";
 
 class App extends Component {
   constructor() {
@@ -23,18 +24,19 @@ class App extends Component {
         cartItems: JSON.parse(localStorage.getItem("cartItems"))
       });
     }
-
-    fetch("http://localhost:8000/products")
-      .then(res => res.json())
-      .catch(err =>
-        fetch("db.json")
-          .then(res => res.json())
-          .then(data => data.products)
-      )
-      .then(data => {
-        this.setState({ products: data });
-        this.listProducts();
-      });
+    this.setState({ products: data });
+    this.listProducts();
+    // fetch("http://localhost:8000/products")
+    //   .then(res => res.json())
+    //   .catch(err =>
+    //     fetch("db.json")
+    //       .then(res => res.json())
+    //       .then(data => data.products)
+    //   )
+    //   .then(data => {
+    //     this.setState({ products: data });
+    //     this.listProducts();
+    //   });
   }
 
   handleRemoveFromCart = (e, product) => {
